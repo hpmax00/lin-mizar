@@ -44,7 +44,7 @@ const logging = config_1.config.getItem('db.logging', true);
  */
 const dialectOptions = config_1.config.getItem('db.ssl') ? {
     ssl: {
-        cert: config.getItem('db.sslCert')
+        cert: config_1.config.getItem('db.sslCert')
     }
 } : {};
 
