@@ -1,4 +1,5 @@
 import Router, { IMiddleware } from 'koa-router';
+import { SwaggerRouter } from 'koa-swagger-decorator';
 export interface Meta {
     auth?: string;
     module?: string;
@@ -9,7 +10,8 @@ export interface Meta {
  * 即可使用全部的koa-router api
  * 也可使用以 lin 为前缀的方法，用于视图函数的权限
  */
-export declare class LinRouter extends Router {
+export declare class LinRouter extends SwaggerRouter {
+    constructor(prefix: any, swaggerRouterOpts?: any);
     linOption(name: string, path: string | RegExp, meta?: Meta, ...middleware: IMiddleware[]): Router<any, {}>;
     linHead(name: string, path: string | RegExp, meta?: Meta, ...middleware: IMiddleware[]): Router<any, {}>;
     linGet(name: string, path: string | RegExp, meta?: Meta, ...middleware: IMiddleware[]): Router<any, {}>;

@@ -77,7 +77,7 @@ class Lin {
             consola_1.default.info(`loading plugin: ${lodash_1.get(plugin, 'name')}`);
             const controllers = Object.values(lodash_1.get(plugin, 'controllers'));
             if (controllers.length > 1) {
-                controllers.forEach(cont => {
+                controllers.forEach((cont) => {
                     lodash_1.set(cont, 'opts.prefix', `/${lodash_1.get(plugin, 'name')}${lodash_1.get(cont, 'opts.prefix')}`);
                     lodash_1.get(cont, 'stack', []).forEach(ly => {
                         if (config_1.config.getItem('debug')) {
@@ -104,12 +104,6 @@ class Lin {
             }
         });
         this.app.use(pluginRp.routes()).use(pluginRp.allowedMethods());
-        pluginRp.swagger({
-            title: 'API V2 Server',
-            description: 'API DOC',
-            version: '1.0.0'
-        });
-        pluginRp.mapDir(__dirname,  '../..');
     }
 }
 exports.Lin = Lin;

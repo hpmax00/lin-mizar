@@ -33,21 +33,19 @@ const password = config_1.config.getItem('db.password', '123456');
  * 是否输出sequelize日志，默认 true
  */
 const logging = config_1.config.getItem('db.logging', true);
-
 /**
  * ssl连接
  dialectOptions: {
     ssl: {
       cert: cert
     }
- } 
+ }
  */
 const dialectOptions = config_1.config.getItem('db.ssl') ? {
     ssl: {
         cert: config_1.config.getItem('db.sslCert')
     }
 } : {};
-
 /**
  * 全局的 Sequelize 实例
  */
