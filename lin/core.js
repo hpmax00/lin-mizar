@@ -104,6 +104,12 @@ class Lin {
             }
         });
         this.app.use(pluginRp.routes()).use(pluginRp.allowedMethods());
+        pluginRp.swagger({
+            title: 'API V2 Server',
+            description: 'API DOC',
+            version: '1.0.0'
+        });
+        pluginRp.mapDir(__dirname,  '../..');
     }
 }
 exports.Lin = Lin;
