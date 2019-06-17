@@ -31,7 +31,8 @@
     "sequelize": "^5.3.5",
     "stream-wormhole": "^1.1.0",
     "tslib": "^1.9.3",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "koa-swagger-decorator": "1.5.16"
   },
   "devDependencies": {
     "@types/consola": "^1.0.0",

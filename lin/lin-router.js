@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const koa_router_1 = tslib_1.__importDefault(require("koa-router"));
+const { SwaggerRouter } = tslib_1.__importDefault(require("koa-swagger-decorator"));
 const util_1 = require("./util");
 const core_1 = require("./core");
 /**
@@ -9,7 +9,7 @@ const core_1 = require("./core");
  * 即可使用全部的koa-router api
  * 也可使用以 lin 为前缀的方法，用于视图函数的权限
  */
-class LinRouter extends koa_router_1.default {
+class LinRouter extends SwaggerRouter {
     linOption(name, path, meta, ...middleware) {
         if (meta && meta.mount) {
             util_1.assert(!!(meta.auth && meta.module), 'auth and module must not be empty, if you want to mount');
